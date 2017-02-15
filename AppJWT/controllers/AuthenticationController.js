@@ -1,6 +1,6 @@
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var UserModel = require('../models').User;
-var configKey = require('../server/configureConstant');
+var configKey = require('../configure/configureConstant');
 // Authenticate the user and get a JSON Web Token to include in the header of future requests.
 module.exports = {
     Authenticate:function(req, res) {  

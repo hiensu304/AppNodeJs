@@ -3,8 +3,8 @@
 // =======================
 var express     = require('express');
 var app         = express();
-var configApp = require('./server/configureApp'); // get our config file
-var configKey = require('./server/configureConstant'); // get our config file
+var configApp = require('./configure/configureApp'); // get our config file
+var configKey = require('./configure/configureConstant'); // get our config file
 var mongoose    = require('mongoose');
 
 // =======================
