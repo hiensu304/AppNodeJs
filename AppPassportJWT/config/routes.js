@@ -1,13 +1,10 @@
-var express = require('express'),
-apiRoutes = express.Router(),
-auth = require('../controllers/AuthenticationController'),
+var auth = require('../controllers/AuthenticationController'),
 account = require('../controllers/AccountController');
 dashboard = require('../controllers/DashboardController');
-module.exports.initialize = function(app,passport) {
-        
-    // =======================
-    // routes ================
-    // =======================
+module.exports.initialize = function(app, passport) {
+    
+    var apiRoutes = express.Router();
+    
     // basic route
     apiRoutes.get('/', function(req, res) {
         res.send('Hello! The API is at http://localhost:8080/api');
@@ -26,13 +23,6 @@ module.exports.initialize = function(app,passport) {
     apiRoutes.get('/dashboard', passport.authenticate('jwt', { session: false }), function(req, res) {  
         res.send('It worked! User id is: ' + req.user._id + '.');
     });
-// apiRoutes.get('/dashboard', passport.authenticate('jwt', { session: false }), function(req, res) {  
-//         var User = require('../models/user');
-//         User.find({}, function(err, users) {
-//             res.json(users);
-//             //res.send('It worked! User id is: ' + 
-//         });
-//     });
 
     app.use(apiRoutes);
 };
