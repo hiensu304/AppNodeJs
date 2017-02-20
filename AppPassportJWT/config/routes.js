@@ -3,7 +3,7 @@ account = require('../controllers/AccountController');
 dashboard = require('../controllers/DashboardController');
 module.exports.initialize = function(app, passport) {
     
-    var apiRoutes = express.Router();
+    var apiRoutes = app.Router();
     
     // basic route
     apiRoutes.get('/', function(req, res) {
