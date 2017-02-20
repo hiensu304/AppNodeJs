@@ -1,9 +1,10 @@
-var auth = require('../controllers/AuthenticationController'),
+var express = require('express'),
+auth = require('../controllers/AuthenticationController'),
 account = require('../controllers/AccountController');
 dashboard = require('../controllers/DashboardController');
 module.exports.initialize = function(app, passport) {
     
-    var apiRoutes = app.Router();
+    var apiRoutes = express.Router();
     
     // basic route
     apiRoutes.get('/', function(req, res) {

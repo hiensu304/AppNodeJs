@@ -22,6 +22,7 @@ module.exports = {
             // Bring in defined Passport Strategy
             passportApp(passport);    
 
+            // initialize routes APIs
             routes.initialize(app,passport);
             return app;
         }
